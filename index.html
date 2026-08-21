@@ -28,6 +28,13 @@
             background-image: radial-gradient(#30363d 1px, transparent 1px);
             background-size: 30px 30px;
         }
+        
+        .circle-mask {
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* Prevents stretching if the JPG is not square */
+            clip-path: circle(50%); /* Cuts the image into a perfect circle */
+            }
 
         .container {
             max-width: 900px;
@@ -185,8 +192,8 @@
                     <a href="https://github.com/JasonSWorrell">💻 GitHub</a>
                 </div>
             </span>
-            <span style="float: right;">
-                <img src="W_logo.png" alt="Logo" style="width: 80px; height: 80px; border-radius: 50%; margin-left: 20px;"></img>
+            <span>
+                <img class="circle-mask" src="W_logo.png" alt="Logo" style="width: 100px; height: 100px; border-radius: 50%; margin-left: 20px;"></img>
             </span>
         </header>
  
