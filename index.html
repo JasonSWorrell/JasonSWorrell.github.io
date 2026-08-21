@@ -103,12 +103,15 @@
         }
 
         /* Experience & Projects Items */
-
+        .item {
+            margin-bottom: 25px;
+        }
 
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+            margin-bottom: 5px;
         }
 
         .item-title {
@@ -131,6 +134,7 @@
 
         .item-details {
             margin: 0;
+            padding-left: 20px;
             color: var(--text-main);
         }
 
@@ -142,7 +146,7 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit);
-            gap: 30px;
+            gap: 15px;
         }
 
         .skill-category {
@@ -160,7 +164,7 @@
             font-size: 0.9em;
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 600px) {
             .container { margin: 10px; padding: 20px; }
             .item-header { flex-direction: column; }
             .contact-info { flex-direction: column; gap: 5px; }
