@@ -79,7 +79,7 @@ class NoteTaker(AppModel):
                 {"role": "user", "content": transcript},
             ]
         
-        inputs= self.tokenizer(
+        inputs= self.tokenizer.apply_chat_template(
             note_paper, 
             tokenize=True, 
             add_generation_prompt=True, 
@@ -93,8 +93,8 @@ class NoteTaker(AppModel):
                     max_new_tokens=512,
                     do_sample=False
                 )
-        tokens =ids[0][inputs["ids"].shape[1]:]
-        notes = self.tokenizer.decode(tokens[0], skip_special_tokens=True)
+        tokens =ids[0][inputs["input_ids"].shape[1]:]
+        notes = self.tokenizer.decode(tokens, skip_special_tokens=True)
         return notes
 
 class Transcriber(AppModel):
@@ -106,3 +106,14 @@ class Transcriber(AppModel):
             model=self.model, 
             device=self.device
         )
+
+    def process_audio(self, audio_path): # audio_path is the input audio, may need to be a few seconds or few minutes at a time. 
+        if audio_path is None:
+            return "No audio source found."
+        try:
+            # Takeing the Audio from source and writing down every word.
+            transcription_result = self.model(audio_path)
+            transcript = transcription_result["text"]
+        except Exception as e:
+            return f"Error during transcription: {str(e)}", ""
+        return transcript
