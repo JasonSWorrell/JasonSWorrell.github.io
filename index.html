@@ -103,15 +103,12 @@
         }
 
         /* Experience & Projects Items */
-        .item {
-            margin-bottom: 25px;
-        }
+
 
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
         }
 
         .item-title {
@@ -134,7 +131,6 @@
 
         .item-details {
             margin: 0;
-            padding-left: 20px;
             color: var(--text-main);
         }
 
@@ -146,7 +142,7 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit);
-            gap: 15px;
+            gap: 30px;
         }
 
         .skill-category {
@@ -164,7 +160,7 @@
             font-size: 0.9em;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
             .container { margin: 10px; padding: 20px; }
             .item-header { flex-direction: column; }
             .contact-info { flex-direction: column; gap: 5px; }
@@ -335,12 +331,13 @@
                 <div class="skill-category">
                     <span class="item-title">Headquarters Air Force & AFRL <i>(Remote)</i></span>
                     <span class="item-date">Feb 2022 – Dec 2023</span>
+                    <div class="item-subtitle">RESEARCH ANALYST -- GenAI Tiger Team</div>
+                    <ul class="item-details">
+                        <li>Collaborated with 30-member team to develop Air Force LLM proof of concept that demonstrated AI capabilities to military leaders.</li>
+                        <li>Synthesized and communicated technical documentation to support development of AI model on new platform.</li>
+                    </ul>
                 </div>
-                <div class="item-subtitle">RESEARCH ANALYST -- GenAI Tiger Team</div>
-                <ul class="item-details">
-                    <li>Collaborated with 30-member team to develop Air Force LLM proof of concept that demonstrated AI capabilities to military leaders.</li>
-                    <li>Synthesized and communicated technical documentation to support development of AI model on new platform.</li>
-                </ul>
+                
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
