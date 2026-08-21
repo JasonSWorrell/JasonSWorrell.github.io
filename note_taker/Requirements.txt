@@ -1,0 +1,6 @@
+gradio
+transformers
+accelerate
+torch
+pydub
+python-docx
